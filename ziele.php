@@ -7,9 +7,9 @@
  */
 
 $ziele = [
-            "contents/startseite.php" => "Startseite",
-            "contents/mich.php" => "Über mich",
-            "contents/impressum.php" => "Impressum"
+            "?page=startseite" => "Startseite",
+            "?page=mich" => "Über mich",
+            "?page=impressum" => "Impressum"
         ];
 
 foreach ($ziele as $nav => $titel)
@@ -17,4 +17,4 @@ foreach ($ziele as $nav => $titel)
             echo "<a href='$nav'>$titel</a> | ";
         }
 ?>
-<hr>
+
