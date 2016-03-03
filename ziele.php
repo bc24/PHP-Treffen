@@ -7,9 +7,9 @@
  */
 
 $ziele = [
-            "index.php" => "Startseite",
-            "mich.php" => "Über mich",
-            "impressum.php" => "Impressum"
+            "contents/startseite.php" => "Startseite",
+            "contents/mich.php" => "Über mich",
+            "contents/impressum.php" => "Impressum"
         ];
 
 foreach ($ziele as $nav => $titel)

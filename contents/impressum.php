@@ -1,5 +1,5 @@
-<?php $template = "frank";
-include "ziele.php";
+<?php
+
 /**
  * Created by PhpStorm.
  * User: Frank
