@@ -2,14 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: Frank
- * Date: 28.02.2016
- * Time: 07:53
+ * Date: 16.02.2016
+ * Time: 09:00
  */
 
 $ziele = [
             "?page=startseite" => "Startseite",
             "?page=mich" => "Über mich",
-            "?page=impressum" => "Impressum"
+            "?page=impressum" => "Impressum",
+            "?page=login" => "Login"
         ];
 
 foreach ($ziele as $nav => $titel)
