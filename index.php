@@ -14,17 +14,35 @@ foreach(glob('php/*.php') as $file){
 
 if(isset($_GET["page"])){
     $page = $_GET["page"];
-} else {
+}elseif(isset($_GET["admin"])){
+    $page = "";
+}
+else{
     $page = "startseite";
 }
+$pfad = "html/$page.html";
 
-$path = "contents/$page.php";
-if(file_exists($path)){
-    $content = file_get_contents($path);
-    include("templates/frank.php");
-} else {
-    echo "Error 404";
+
+if ($database->has("content", array("name" => $page))){
+    $content = $database->get("content", "content", array("name" => $page));
+
+    include("tpl/main.php");
+}elseif(isset($_GET["admin"])){
+    if (is_eingeloggt()){
+        $page = $_GET["admin"];
+        $pfad = "admin/$page.php";
+        if(file_exists($pfad)) {
+            include $pfad;
+        }
+    }else{
+        echo "Zugriff verweigert.";
+    }
+
 }
 
+
+else {
+    echo "Die Datei existiert nicht";
+}
 
 ?>
